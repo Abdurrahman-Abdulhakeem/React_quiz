@@ -92,7 +92,7 @@ const QuizContext = createContext()
       const fetchQuiz = async () => {
         dispatch({type: "loading"})
        try {
-        const res = await fetch("http://localhost:8000/questions")
+        const res = await fetch("/.netlify/functions/getData")
         const data = await res.json()
         // console.log(data)
         dispatch({type:"quiz/received", payload: data})
