@@ -92,7 +92,7 @@ const QuizContext = createContext()
       const fetchQuiz = async () => {
         dispatch({type: "loading"})
        try {
-        const res = await fetch("https://bcc2-102-89-46-16.ngrok-free.app ")
+        const res = await fetch("https://bcc2-102-89-46-16.ngrok-free.app")
         const data = await res.json()
         // console.log(data)
         dispatch({type:"quiz/received", payload: data})
