@@ -1,0 +1,61 @@
+{
+    "questions": [
+        {
+             "question": "What is JSX in React?",
+             "options": ["A markup language.",
+                          "A JavaScript extension.",
+                          "A CSS framework.",
+                          "A query language.",
+                          "A python library."
+                         ],
+             "correctOption": 1,
+             "points": 10
+
+        },
+        {
+             "question": "What is the purpose of the 'useState' hook in React?",
+             "options": ["To import external CSS styles.",
+                          "To define a class component.",
+                          "To manage and update state in a functional component.",
+                         "To create a new HTML element.",
+                          "To render child components."
+                         ],
+             "correctOption": 2,
+             "points": 10
+
+        },
+        {
+             "question": "What is the purpose of 'setState' in React?",
+             "options": [
+                         "To update a component's state and trigger re-rendering.",
+                         "To create a new HTML element.", 
+                         "To render child components.",
+                         "To import a hook.",
+                         "None."
+                    ],
+             "correctOption": 0,
+             "points": 10
+
+        },
+        {
+             "question": "What is the purpose of 'props' object in React?",
+             "options": [
+                         "To define component methods.",
+                          "To store local component data.",
+                          "To pass data from parents to child components.",
+                          "To manage component state.",
+                          "To control component rendering."
+                         ],
+             "correctOption": 2,
+             "points": 10
+
+        },
+        {
+             "question": "Which React hook allows you to perform side effects in functional components?",
+             "options": ["useState.", "useEffect.", "useContext.", "useReducer.", "useMemo."],
+             "correctOption": 1,
+             "points": 10
+
+        }
+    ]
+}
