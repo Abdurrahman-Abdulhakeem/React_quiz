@@ -15,7 +15,7 @@ import { useQuiz } from './contexts/QuizProvider';
 
 function App() {
 
-  const { status, error } = useQuiz()
+  const { status } = useQuiz()
 
 
   return (
