@@ -91,15 +91,13 @@ const QuizContext = createContext()
     useEffect(()=> {
       const fetchQuiz = async () => {
         dispatch({type: "loading"})
-       try {
+       
         const res = await fetch("https://8389-102-89-46-211.ngrok-free.app/questions")
         const data = await res.json()
         // console.log(data)
         dispatch({type:"quiz/received", payload: data})
 
-      }catch(err) {
-        dispatch({type: "quiz/failed", payload: err.message})
-      }
+    
 
       }
 
