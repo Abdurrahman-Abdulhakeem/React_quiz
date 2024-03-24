@@ -1,63 +1,35 @@
+import "./App.css";
 
-import './App.css';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import StartScreen from './StartScreen';
-import Questions from './Questions';
-import Error from './Error';
-import FinishScreen from './FinishScreen';
-import Spinner from './Spinner';
+import { useUser } from "./contexts/UserProvider";
 
-import { useQuiz } from './contexts/QuizProvider';
-
-
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import Register from "./Register";
+import { useEffect } from "react";
+import Dashboard from "./Dashboard";
+import LoginRequired from "./LoginRequired";
+import Login from "./Login";
 
 function App() {
+  // const { users } = useUser();
 
-  const { status } = useQuiz()
 
+  // const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   !users ? navigate("/signup") : navigate("/dashboard");
+  // }, [users]);
 
   return (
-    <section className='quiz'>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+        {/* <Route path="/signin" element={< Register />} /> */}
 
-
-      <Main >
-
-      {status === "loading" &&
-        <Spinner />
-      }
-
-      {status === "error" &&
-        <Error />
-      }
-
-        {status === "ready" &&
-          <StartScreen />
-        }
-
-        {
-          status === "active" &&
-          <>
-          {/* <div className='spinner1'>
-            <div className='spinn'></div>
-            <div className='spinn'></div>
-            <div className='spinn'></div>
-          </div> */}
-            <Header />
-            <Questions  />
-            <Footer/>
-          </>
-        }
-
-        {
-          status === "finish" &&
-          <FinishScreen />
-        }
-      </Main>
-
-
-    </section>
+        <Route path="/dashboard" element={<LoginRequired> <Dashboard /> </LoginRequired>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
