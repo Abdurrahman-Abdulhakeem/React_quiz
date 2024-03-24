@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useUser } from "./contexts/UserProvider";
 export default function Main({ children }) {
   const { user, dispatch } = useUser();

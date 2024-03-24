@@ -39,7 +39,7 @@ function Login() {
 
   useEffect(() => {
     currentUser && navigate("/dashboard");
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   return (
     <form onSubmit={handleSubmit} className="reg-form

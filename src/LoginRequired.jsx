@@ -1,5 +1,5 @@
 import { useUser } from "./contexts/UserProvider";
-import { useNavigate, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 function LoginRequired({ children }) {
   const {  user } = useUser();

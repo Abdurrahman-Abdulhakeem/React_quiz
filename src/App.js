@@ -1,10 +1,8 @@
 import "./App.css";
 
-import { useUser } from "./contexts/UserProvider";
 
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Register from "./Register";
-import { useEffect } from "react";
 import Dashboard from "./Dashboard";
 import LoginRequired from "./LoginRequired";
 import Login from "./Login";

@@ -23,9 +23,13 @@ const reducer = (state, action) => {
       } else {
         alert("Incorrect username or password");
       }
+      break;
 
     case "logout":
       return localStorage.removeItem("user");
+      break;
+    default:
+      return initialState;
   }
 };
 

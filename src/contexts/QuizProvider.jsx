@@ -25,6 +25,8 @@ const reducer = (state, action) => {
         questions: action.payload,
         error: "",
       };
+      break
+
 
     case "quiz/failed":
       return {
@@ -32,12 +34,14 @@ const reducer = (state, action) => {
         status: "error",
         error: action.payload,
       };
+      break
 
     case "loading":
       return {
         ...state,
         status: "loading",
       };
+      break
 
     case "active":
       return {
@@ -45,6 +49,7 @@ const reducer = (state, action) => {
         status: "active",
         secRemain: state.questions.length * SECS_PER_QUESTION,
       };
+      break
 
     case "answer":
       const option = state.questions[state.index].correctOption;
@@ -54,6 +59,7 @@ const reducer = (state, action) => {
         answer: action.payload,
         score: action.payload === option ? state.score + point : state.score,
       };
+      break
     case "nextQuestion":
       const questionLength = state.questions.length;
 
@@ -63,6 +69,7 @@ const reducer = (state, action) => {
           state.index + 1 !== questionLength ? state.index + 1 : state.index,
         answer: null,
       };
+      break
 
     case "finish":
       return {
@@ -70,6 +77,7 @@ const reducer = (state, action) => {
         status: "finish",
         answer: null,
       };
+      break
 
     case "tick":
       return {
@@ -77,12 +85,14 @@ const reducer = (state, action) => {
         secRemain: state.secRemain - 1,
         status: state.secRemain === 0 ? "finish" : state.status,
       };
+      break
 
     case "reset":
       return {
         ...initialState,
         questions: state.questions,
       };
+      break
 
     default:
       throw new Error("Action Unknown!");
