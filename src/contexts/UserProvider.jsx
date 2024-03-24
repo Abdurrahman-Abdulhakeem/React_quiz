@@ -27,7 +27,7 @@ const reducer = (state, action) => {
 
     case "logout":
       return localStorage.removeItem("user");
-      break;
+  
     default:
       return initialState;
   }
