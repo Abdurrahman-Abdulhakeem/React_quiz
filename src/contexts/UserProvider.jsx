@@ -2,9 +2,13 @@ import React, { createContext, useContext, useReducer } from "react";
 
 const UserContext = createContext();
 
+export const logoutAction = () => {
+  localStorage.removeItem('user')
+}
+
 const initialState = {
   users: JSON.parse(localStorage.getItem("users")) || [],
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  user:  JSON.parse(localStorage.getItem("user")) || null,
 
   status: "empty",
 };
@@ -22,11 +26,12 @@ const reducer = (state, action) => {
         return (window.location.pathname = "/dashboard");
       } else {
         alert("Incorrect username or password");
+        return (window.location.pathname = "/signin");
       }
       break;
 
-    case "logout":
-      return localStorage.removeItem("user");
+    // case "logout":
+    //   return localStorage.removeItem("user");
   
     default:
       return initialState;

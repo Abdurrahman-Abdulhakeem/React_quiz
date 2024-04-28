@@ -131,6 +131,32 @@ footer {
   }
 }
 
+
+.reg-form {
+  background-color: #fff;
+  padding: 30px;
+}
+
+main button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+
+header button:hover {
+  background-color: slateblue;
+} 
+
+main button:hover {
+  opacity: 0.7;
+  /* background-color: #fff; */
+}
+
 @media (max-width: 600px) {
   header h1 {
     font-size: 2em;
@@ -155,6 +181,6 @@ footer {
   margin: 15px 0px;
   background: transparent;
   padding: 10px;
-  color: #fff;
+  color: #000;
   outline-color: slateblue;
 }

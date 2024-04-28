@@ -1,13 +1,13 @@
 import React from "react";
-import { useUser } from "./contexts/UserProvider";
+import { logoutAction, useUser } from "./contexts/UserProvider";
 export default function Main({ children }) {
   const { user, dispatch } = useUser();
-
 
   const logoutUser = () => {
     window.location.reload();
     window.location.pathname = "/signin";
-    dispatch({ type: "logout" });
+
+    logoutAction();
   };
 
   return (

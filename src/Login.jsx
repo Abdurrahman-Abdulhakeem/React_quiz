@@ -24,9 +24,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!username || !password) alert("Please enter all required fields");
-
-    dispatch({ type: "login", payload: [username[0], password[0]] });
+    if (!username || !password) {
+      alert("Please enter all required fields");
+    } else {
+      dispatch({ type: "login", payload: [username[0], password[0]] });
+    }
 
     //  currentUser &&
     //   navigate("/dashboard");
@@ -42,27 +44,7 @@ function Login() {
   }, [currentUser, navigate]);
 
   return (
-    <form onSubmit={handleSubmit} className="reg-form
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ">
+    <form onSubmit={handleSubmit} className="reg-form">
       <input
         type="text"
         name="username"
